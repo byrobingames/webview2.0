@@ -65,7 +65,7 @@ Open webview in a popup or in fullscreen.
 
 -url = https://github.com<br/>
 -popup<br/>
--whitelist = [“(http|https)://(.`*)github.com(.`*)”]<br/>
+-whitelist = [“(http|https)://(.`*`)github.com(.`*`)”]<br/>
 -blacklist = null<br/>
 
 This means that the user can browse only on github.com, if they enter another url, the webview will close.
@@ -76,21 +76,21 @@ This means that the user can browse only on github.com, if they enter another ur
 -url = http://www.google.com<br/>
 -popup<br/>
 -whitelist = null<br/>
--blacklist = [“(http|https)://(.`*)github.com(.`*)”]<br/>
+-blacklist = [“(http|https)://(.`*`)github.com(.`*`)”]<br/>
 
 This means the user can browse on every website, exept on github.com, if the user browse to github.com, the webview will close.
 
 **How to add more website toe whitelist and blacklist.**<br/>
 Because the whitelist and blacklist is a array, you can add more website to these lists.<br/>
 Just before the close Bracket “]”, you putt [b],”http://website.com”[/b] (comma-Quotation mark-url-Quotation mark)<br/>
-Like this: [“(http|https)://(.`*)github.com(.`*)”,”http://website.com”] 
+Like this: [“(http|https)://(.`*`)github.com(.`*`)”,”http://website.com”] 
 
 **Legend for whitelist and blacklist**<br/>
 [ ] = between open close brackets, you put code.<br/>
 " " = between the 2 Quotation mark you put the website you wanna add to the list.<br/>
 , = between more websites you enter a comma.<br/>
 (http|https) = looks if the website is http or https<br/>
-(.`*) = can be everything,  if  the website have submaps.<br/>
+(.`*`) = can be everything,  if  the website have submaps.<br/>
 
 ## Donate
 
