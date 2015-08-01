@@ -82,7 +82,7 @@ This means the user can browse on every website, exept on github.com, if the use
 
 **How to add more website toe whitelist and blacklist.**<br/>
 Because the whitelist and blacklist is a array, you can add more website to these lists.<br/>
-Just before the close Bracket “]”, you putt [b],”http://website.com”[/b] (comma-Quotation mark-url-Quotation mark)<br/>
+Just before the close Bracket “]”, you putt **,”http://website.com”** (comma-Quotation mark-url-Quotation mark)<br/>
 Like this: [“(http|https)://(.`*`)github.com(.`*`)”,”http://website.com”] 
 
 **Legend for whitelist and blacklist**<br/>
