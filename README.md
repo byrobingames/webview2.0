@@ -41,7 +41,7 @@ Or for advanced users:(Not recommended)
 ###IMPORTENT
 Because of App Transport Security (ATS) in IOS9, HTTP will not loads in IOS9.
 
-To get it work on IOS9 follow this workaround, you have to set NSAllowsArbitraryLoads flag to treu in the INFO.plist file.
+To get it work on IOS9 you have to set NSAllowsArbitraryLoads flag to treu in the INFO.plist file.
 
 See this post how to do this:
 http://community.stencyl.com/index.php/index.php?topic=44271.msg247444#msg247444
