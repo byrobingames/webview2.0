@@ -11,42 +11,31 @@ Stencyl extension for "Webview" on iOS and Android. This extension allows you to
 - Whitelist validation (the webview will close if the user goes to a non-whitelisted URL).
 - Blacklist validation (the webview will close if the user goes to a blacklisted URL).
 - 64-bit support to iOS
-- Tested with iPhone 5 IOS 8, Ipad IOS 8 and Samgsung Note 3 4.4.2
+- Tested with iPhone 5 IOS 9, Ipad IOS 9 and Samgsung Note 3 5
 
 
 ## How to Install
-Download zip file on the right of the screen. ![download](http://www.byrobingames.com/stencyl/heyzap/download.png) on this page https://github.com/byrobingames/webview2.0<br />
+
+Go to: http://byrobin.nl/store/product/webview2-0-for-ios-andrid-stencylopenfl/
+
+Add the extension to the cart en proceed with checkout. After you successfully placed the order, you will get an e-mail with the download link or go to “My Account” section where you can also find the download link.
+
+Or
+
+Use the "Download Zip" from this page.
+
+Free Extension is named “master.zip” when you download.
 
 Install the zip file: Go to : http://community.stencyl.com/index.php/topic,30432.0.html
 
-If you have already install a previous version (2.2 or lower) of Webview extension, you will see two extension in "Settings->Extensions". This is because of the renamed folder you just downloaded from GitHub.
-If this is your case, do the following:
-- Go to Settings->Extensions
-- Enable the Webview Extension thats not enabled (press green button "Enable")
-- Disable the Webvies Extension thats not disabled (press red button "Disable")
-- Close your Game
-- Go to "YOURDOCUMENTFOLDER/stencylworks/engine-extensions/" folder
-- Delete the folder "webview2.0" and leave the folder "webview2.0-master"(thats the new folder name)
-- Open you Game
-- You see now in Settings->Extensions, there is now jus one Webview extension.
-- The blocks you already used with previous version subsist.
-
-Or for advanced users:(Not recommended)
-- Unzip webview2.0-master.zip you just download
-- Rename folder from "webview2.0-master" to "webview2.0"
-- Copy the webview2.0 folder and paste it in "YOURDOCUMENTFOLDER/stencylworks/engine-extensions/"
-- You have to do this every time you download a updated version fom GitHub.
- 
 
 ###IMPORTENT
+
 Because of App Transport Security (ATS) in IOS9, HTTP will not loads in IOS9.
 
-To get it work on IOS9 you have to set NSAllowsArbitraryLoads flag to treu in the INFO.plist file.
-
-See this post how to do this:
-http://community.stencyl.com/index.php/index.php?topic=44271.msg247444#msg247444
+To get it work on IOS9 you have to Download, Install and Enable "<a href="http://byrobin.nl/store/product/byrobin-extension-manager-stencylopenfl/">byRobin Extension Manager</a>"
  
-## Documentation and Blocks Example
+## Documentation and Block Examples
 
 Just put the block under a  button, fill in the block and the webview will open.
 
