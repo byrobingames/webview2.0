@@ -1,6 +1,6 @@
-name=WebViews 2.0 for IOS and Android
+name=WebViews 2.0 for IOS and Android v2.4 (byRobin)
 description=Implements webviews for mobile Android and iOS.
 author=Robin Schaafsma
 website=http://www.byrobingames.com
-version=2.3
+version=2.4
 compatibility=mobile

@@ -1,10 +1,18 @@
 package;
 
+#if cpp
+import cpp.Lib;
+#elseif neko
+import neko.Lib;
+#else
 import openfl.Lib;
+#end
 
 #if android
 import openfl.utils.JNI;
 #end
+
+import haxe.Json;
 	
 class WebView  {
 
@@ -14,15 +22,15 @@ class WebView  {
 	private static var APISetCallback:Dynamic=null;
 	private static var APINavigate:Dynamic=null;
 	private static var APIDestroy:Dynamic=null;
+	private static var APILoadHtml:Dynamic=null;
 	
 	#if ios
 	private static var listener:WebViewListener;
 	#end
 
 	#if android
-	private static var _open :String -> Bool -> Array<String> -> Array<String> -> Void = null;
-	private static var _isActive :Void -> Bool = null;
-	private static var _poolingTimer:haxe.Timer = null;
+	private static var _open :String -> Void = null;
+	private static var _openHtml :String -> Void = null;
 	#end
 
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -34,32 +42,61 @@ class WebView  {
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public static function open (url: String = null, floating :Bool = false, ?urlWhitelist :Array<String>, ?urlBlacklist :Array<String>) :Void {
+	public static function open (
+		url: String = null,
+		floating :Bool = false,
+		?urlWhitelist :Array<String>,
+		?urlBlacklist :Array<String>,
+		?useWideViewPort :Bool = false,						// Android only
+		?mediaPlaybackRequiresUserGesture :Bool = true		// Android only
+	) :Void {
 		init();
 		if(urlWhitelist!=null) urlWhitelist.push(url);
+		
 		#if android
-			_open(url, floating, urlWhitelist, urlBlacklist);
-			if(onClose!=null) checkActive();
-		#else
+			if (urlWhitelist==null) {
+				urlWhitelist = [];
+			}
+			if (urlBlacklist==null) {
+				urlBlacklist = [];
+			}
+			var obj = {
+				url : url,
+				floating : floating,
+				urlWhitelist : urlWhitelist,
+				urlBlacklist : urlBlacklist,
+				useWideViewPort : useWideViewPort,
+				mediaPlaybackRequiresUserGesture : mediaPlaybackRequiresUserGesture
+			}
+			_open(Json.stringify(obj));
+		#elseif ios
 			if (listener == null) listener = new WebViewListener(urlWhitelist, urlBlacklist);
 			APICall("init", [listener, floating]);
 			navigate(url);
 		#end
 	}
 
-	#if android
-	private static function checkActive(){
-		if(_poolingTimer==null){
-			_poolingTimer = new haxe.Timer(250);
-			_poolingTimer.run = checkActive;
-		}
-		if(!_isActive()){
-			_poolingTimer.stop();
-			_poolingTimer = null;
-			if(onClose!=null) onClose();
-		}
+	public static function openHtml(
+		html:String, 
+		floating:Bool=false,
+		?useWideViewPort :Bool = false,						// Android only
+		?mediaPlaybackRequiresUserGesture :Bool = true		// Android only
+	) :Void {
+		init();
+		#if android
+			var obj = {
+				html : html,
+				floating : floating,
+				useWideViewPort : useWideViewPort,
+				mediaPlaybackRequiresUserGesture : mediaPlaybackRequiresUserGesture
+			}
+			_openHtml(Json.stringify(obj));
+		#elseif ios
+			if (listener == null) listener = new WebViewListener(null, null);
+			APICall("init", [listener, floating]);
+			APICall("loadHtml", [html]);
+		#end
 	}
-	#end
 
 	#if ios
 	public static function navigate(url:String):Void {
@@ -78,16 +115,21 @@ class WebView  {
 	private static function init():Void {
 		if(initialized == true) return;
 		initialized = true;
-		try{
+		try {
 			#if android
-			_open = JNI.createStaticMethod("extensions/webview/WebViewExtension", "open", "(Ljava/lang/String;Z[Ljava/lang/String;[Ljava/lang/String;)V");
-			_isActive = JNI.createStaticMethod("extensions/webview/WebViewExtension", "isActive", "()Z");
+			_open = openfl.utils.JNI.createStaticMethod("extensions/webview/WebViewExtension", "open", "(Ljava/lang/String;)V");
+			_openHtml = openfl.utils.JNI.createStaticMethod("extensions/webview/WebViewExtension", "openHtml", "(Ljava/lang/String;)V");
+			var _callbackFunc = openfl.utils.JNI.createStaticMethod("extensions/webview/WebViewExtension", "setCallback", "(Lorg/haxe/lime/HaxeObject;)V");
+			_callbackFunc(new AndroidCallbackHelper());
+
 			#elseif ios
-            APIInit     = Lib.load("webviewex","webviewAPIInit", 3);
-			APINavigate = Lib.load("webviewex","webviewAPINavigate", 1);
-			APIDestroy  = Lib.load("webviewex","webviewAPIDestroy", 0);
+            APIInit     = cpp.Lib.load("webviewex","webviewAPIInit", 3);
+			APINavigate = cpp.Lib.load("webviewex","webviewAPINavigate", 1);
+			APILoadHtml  = cpp.Lib.load("webviewex","webviewAPILoadHtml", 1);
+			APIDestroy  = cpp.Lib.load("webviewex","webviewAPIDestroy", 0);
 			#end
-		}catch(e:Dynamic){
+
+		} catch(e:Dynamic) {
 			trace("INIT Exception: "+e);
 		}
 	}
@@ -106,9 +148,10 @@ class WebView  {
             if (method == "callback") APISetCallback(args[0]);
             if (method == "navigate") APINavigate(args[0]);
             if (method == "destroy") APIDestroy();
-			#elseif iphone
+			#elseif ios
 			if (method == "init") APIInit(args[0].onClose, args[0].onURLChanging, args[1]);
             if (method == "navigate") APINavigate(args[0]);
+            if (method == "loadHtml") APILoadHtml(args[0]);
             if (method == "destroy") APIDestroy();
 			#end
 		} catch(e:Dynamic) {
@@ -133,6 +176,7 @@ class WebViewListener {
 	
 	public function onClose():Void {
 		if(WebView.onClose!=null) WebView.onClose();
+		trace("WebViewclosed");
 	}
 
 	private function find(urls :Array<String>, url:String):Bool{

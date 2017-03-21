@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <palette>
 
-	<block tag="openListView" spec="Open webview with url: %0 in: %1 Whitelist: %2 Blacklist: %3 [c:webview]" code="WebView.open(~,~,~,~);" type="action" color="blue" returns="void">
+	<block tag="openURLWebView" spec="OpenURL webview with url: %0 in: %1 Whitelist: %2 Blacklist: %3 [c:webview]" code="WebView.open(~,~,~,~);" type="action" color="blue" returns="void">
 		<fields>
 			<text order="0"></text>
 			<dropdown order="1">
@@ -14,4 +14,16 @@
 			<list order="3"></list>
 		</fields>
 	</block>
+    
+    <block tag="openHTMLWebView" spec="OpenHTML webview with html: %0 in: %1 [c:webview]" code="WebView.openHtml(~,~);" type="action" color="blue" returns="void">
+        <fields>
+            <text order="0"></text>
+            <dropdown order="1">
+                <choices>
+                    <c text="popup" code="true"></c>
+                    <c text="fullscreen" code="false"></c>
+                </choices>
+            </dropdown>
+        </fields>
+    </block>
 </palette>
