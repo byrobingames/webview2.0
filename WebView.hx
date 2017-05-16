@@ -11,6 +11,7 @@ import openfl.Lib;
 #if android
 import openfl.utils.JNI;
 #end
+import scripts.ByRobinAssets;
 
 import haxe.Json;
 	
@@ -82,6 +83,9 @@ class WebView  {
 		?useWideViewPort :Bool = false,						// Android only
 		?mediaPlaybackRequiresUserGesture :Bool = true		// Android only
 	) :Void {
+		if (html == ""){
+			html = ByRobinAssets.WVHtmlCode;
+		}
 		init();
 		#if android
 			var obj = {
