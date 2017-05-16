@@ -4,6 +4,12 @@ For Stencyl 3.3 and above
 
 Stencyl extension for "Webview" on iOS and Android. This extension allows you to easily integrate Webview (in-ap browser) on your Stencyl game / application. (http://www.stencyl.com)
 
+### IMPORTENT
+
+This Extension Required the Toolset Extension Manager http://byrobin.nl/store/product/byrobintoolsetextension/
+
+[![webviewtoolset](http://byrobin.nl/store/wp-content/uploads/sites/4/2016/03/webviewtoolset.png)]
+
 ## Main Features
 
 - Full-screen and Popup mode.
