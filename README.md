@@ -1,6 +1,6 @@
 ## Stencyl Webview (in-app browser) Extension (Openfl)
 
-For Stencyl 3.3 and above
+For Stencyl 3.4 and above
 
 Stencyl extension for "Webview" on iOS and Android. This extension allows you to easily integrate Webview (in-ap browser) on your Stencyl game / application. (http://www.stencyl.com)
 
