@@ -11,7 +11,8 @@ import openfl.Lib;
 #if android
 import openfl.utils.JNI;
 #end
-import scripts.ByRobinAssets;
+
+import openfl.Assets;
 
 import haxe.Json;
 	
@@ -84,7 +85,7 @@ class WebView  {
 		?mediaPlaybackRequiresUserGesture :Bool = true		// Android only
 	) :Void {
 		if (html == ""){
-			html = ByRobinAssets.WVHtmlCode;
+			html = Assets.getText("assets/data/com.byrobingames.manager/webview.html");
 		}
 		init();
 		#if android
