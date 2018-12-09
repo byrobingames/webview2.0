@@ -6,9 +6,9 @@ Stencyl extension for "Webview" on iOS and Android. This extension allows you to
 
 ### IMPORTENT
 
-This Extension Required the Toolset Extension Manager http://byrobin.nl/store/product/byrobintoolsetextension/
+This Extension Required the Toolset Extension Manager [https://byrobingames.github.io](https://byrobingames.github.io)
 
-[![webviewtoolset](http://byrobin.nl/store/wp-content/uploads/sites/4/2016/03/webviewtoolset.png)]
+![webviewtoolset](https://byrobingames.github.io/img/webview/webviewtoolset.png)
 
 ## Main Features
 
@@ -22,18 +22,11 @@ This Extension Required the Toolset Extension Manager http://byrobin.nl/store/pr
 
 ## How to Install
 
-Go to: http://byrobin.nl/store/product/webview2-0-for-ios-andrid-stencylopenfl/
+To install this Engine Extension, go to the toolset (byRobin Extension Mananger) in the Extension menu of your game inside Stencyl.<br/>
+Select the Engine Extension from the left menu and click on "Download"
 
-Add the extension to the cart en proceed with checkout. After you successfully placed the order, you will get an e-mail with the download link or go to “My Account” section where you can also find the download link.
-
-Or
-
-Use the "Download Zip" from this page.
-
-Free Extension is named “master.zip” when you download.
-
-Install the zip file: Go to : http://community.stencyl.com/index.php/topic,30432.0.html
-
+If you not have byRobin Extension Mananger installed, install this first.
+Go to: [https://byrobingames.github.io](https://byrobingames.github.io)
 
 ###IMPORTENT
 
@@ -48,7 +41,7 @@ Just put the block under a  button, fill in the block and the webview will open.
 **Open WebView**<br/>
 Open webview in a popup or in fullscreen.
 
-![webviewblock](http://www.byrobin.nl/stencyl/webview/webviewblock.png)
+![webviewblock](https://byrobingames.github.io/img/webview/webviewblock.png)
 
 **Inputs**<br/>
 - website url(as Text) start with http://<br/>
@@ -57,7 +50,7 @@ Open webview in a popup or in fullscreen.
 - Blacklist (as Code(array))<br/>
 
 **Example 1: Without whitelist and blacklist**<br/>
-![webviewblocknormal](http://www.byrobin.nl/stencyl/webview/webviewblocknormal.png)<br/>
+![webviewblocknormal](https://byrobingames.github.io/img/webview/webviewblocknormal.png)<br/>
 
 -url = http://www.google.com<br/>
 -popup<br/>
@@ -65,7 +58,7 @@ Open webview in a popup or in fullscreen.
 -blacklist= null
 
 **Example 2: With whitelist**<br/>
-![webviewblockwhitelist](http://www.byrobin.nl/stencyl/webview/webviewblockwhitelist.png)
+![webviewblockwhitelist](https://byrobingames.github.io/img/webview/webviewblockwhitelist.png)
 
 -url = https://github.com<br/>
 -popup<br/>
@@ -75,7 +68,7 @@ Open webview in a popup or in fullscreen.
 This means that the user can browse only on github.com, if they enter another url, the webview will close.
 
 **Example 3: With blacklist**<br/>
-![webviewblockblacklist](http://www.byrobin.nl/stencyl/webview/webviewblockblacklist.png)
+![webviewblockblacklist](https://byrobingames.github.io/img/webview/webviewblockblacklist.png)
 
 -url = http://www.google.com<br/>
 -popup<br/>
@@ -96,6 +89,26 @@ Like this: [“(http|https)://(.`*`)github.com(.`*`)”,”http://website.com”
 (http|https) = looks if the website is http or https<br/>
 (.`*`) = can be everything,  if  the website have submaps.<br/>
 
+## Version History
+
+- (2.0)  new release
+- (2.1) Enabled Javascript for Android (IOS enabled by default)
+- (2.2) Update info.txt file.
+- (2.3) Add icon on block
+- 2017-03-21(2.4) Added Android Gradle Support for openfl4 and added open webview with HTML Code block
+- 2017-05-16(2.4.1) Tested for Stencyl 3.5, Required byRobin Toolset Extension Manager
+- 2017-05-18(2.4.2) FIX: Single/Double quotes not accepted
+
+## Submitting a Pull Request
+
+This software is opensource.<br/>
+If you want to contribute you can make a pull request
+
+Repository: [https://github.com/byrobingames/webview2.0](https://github.com/byrobingames/webview2.0)
+
+Need help with a pull request?<br/>
+[https://help.github.com/articles/creating-a-pull-request/](https://help.github.com/articles/creating-a-pull-request/)
+
 ## Donate
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HKLGFCAGKBMFL)<br />
@@ -103,7 +116,7 @@ Like this: [“(http|https)://(.`*`)github.com(.`*`)”,”http://website.com”
 ## License
 
 build For OpenFl.<br/>
-The MIT License (MIT) - [LICENSE.md](LICENSE.md)
+The MIT License (MIT)
 
 Copyright &copy; 2013 SempaiGames (http://www.sempaigames.com)
 
@@ -113,3 +126,9 @@ Make it work for Stencyl Game Engine:<br/>
 Copyright © 2014 byRobinGames (http://www.byrobingames.com)
 
 Author: Robin Schaafsma
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
