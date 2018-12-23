@@ -19,16 +19,16 @@ This Extension Required the Toolset Extension Manager [https://byrobingames.gith
 - 64-bit support to iOS
 - Tested with iPhone 5 IOS 9, Ipad IOS 9 and Samgsung Note 3 5
 
-
 ## How to Install
 
 To install this Engine Extension, go to the toolset (byRobin Extension Mananger) in the Extension menu of your game inside Stencyl.<br/>
-Select the Engine Extension from the left menu and click on "Download"
+![toolsetextensionlocation](https://byrobingames.github.io/img/toolset/toolsetextensionlocation.png)<br/>
+Select the Extension from the menu and click on "Download"
 
-If you not have byRobin Extension Mananger installed, install this first.
+If you not have byRobin Extension Mananger installed, install this first.<br/>
 Go to: [https://byrobingames.github.io](https://byrobingames.github.io)
 
-###IMPORTENT
+### IMPORTENT
 
 Because of App Transport Security (ATS) in IOS9, HTTP will not loads in IOS9.
 
@@ -108,6 +108,15 @@ Repository: [https://github.com/byrobingames/webview2.0](https://github.com/byro
 
 Need help with a pull request?<br/>
 [https://help.github.com/articles/creating-a-pull-request/](https://help.github.com/articles/creating-a-pull-request/)
+
+## ANY ISSUES?
+
+Add the issue on GitHub<br/>
+Repository: [https://github.com/byrobingames/webview2.0/issues](https://github.com/byrobingames/webview2.0/issues)
+
+Need help with creating a issue?<br/>
+[https://help.github.com/articles/creating-an-issue/](https://help.github.com/articles/creating-an-issue/)
+
 
 ## Donate
 
