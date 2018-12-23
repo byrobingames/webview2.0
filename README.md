@@ -6,6 +6,8 @@ Stencyl extension for "Webview" on iOS and Android. This extension allows you to
 
 ### IMPORTENT
 
+Because of App Transport Security (ATS) in IOS9, HTTP will not loads in IOS9.
+
 This Extension Required the Toolset Extension Manager [https://byrobingames.github.io](https://byrobingames.github.io)
 
 ![webviewtoolset](https://byrobingames.github.io/img/webview/webviewtoolset.png)
@@ -27,23 +29,27 @@ Select the Extension from the menu and click on "Download"
 
 If you not have byRobin Extension Mananger installed, install this first.<br/>
 Go to: [https://byrobingames.github.io](https://byrobingames.github.io)
-
-### IMPORTENT
-
-Because of App Transport Security (ATS) in IOS9, HTTP will not loads in IOS9.
-
-To get it work on IOS9 you have to Download, Install and Enable "<a href="http://byrobin.nl/store/product/byrobin-extension-manager-stencylopenfl/">byRobin Extension Manager</a>"
  
 ## Documentation and Block Examples
 
-Just put the block under a  button, fill in the block and the webview will open.
+Just put the block under a button, fill in the block and the webview will open.
 
-**Open WebView**<br/>
+### OpenHTML code in WebView
+You can write your own local html code in this block. Leave the textfield empty if you are ussing the textfield from the toolset manager.<br/>
+![webviewopenhtml](https://byrobingames.github.io/img/webview/webviewopenhtml.png)
+
+***Inputs***<br/>
+- in the "with html" textfied you can write html code, leave empty when ussing the textfield from the toolset manager<br/>
+- popup or fullscreen(as choise) (no close with fullscreen)<br/>
+
+<hr/>
+
+### Open WebView
 Open webview in a popup or in fullscreen.
 
 ![webviewblock](https://byrobingames.github.io/img/webview/webviewblock.png)
 
-**Inputs**<br/>
+***Inputs***<br/>
 - website url(as Text) start with http://<br/>
 - popup or fullscreen(as choise) (no close with fullscreen)<br/>
 - Whitelist (as Code(array))<br/>
