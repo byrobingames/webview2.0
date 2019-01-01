@@ -104,6 +104,7 @@ Like this: [“(http|https)://(.`*`)github.com(.`*`)”,”http://website.com”
 - 2017-03-21(2.4) Added Android Gradle Support for openfl4 and added open webview with HTML Code block
 - 2017-05-16(2.4.1) Tested for Stencyl 3.5, Required byRobin Toolset Extension Manager
 - 2017-05-18(2.4.2) FIX: Single/Double quotes not accepted
+- 2019-01-01(2.4.3) FIX: Android JNI import.
 
 ## Submitting a Pull Request
 
