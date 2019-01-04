@@ -105,6 +105,7 @@ Like this: [“(http|https)://(.`*`)github.com(.`*`)”,”http://website.com”
 - 2017-05-16(2.4.1) Tested for Stencyl 3.5, Required byRobin Toolset Extension Manager
 - 2017-05-18(2.4.2) FIX: Single/Double quotes not accepted
 - 2019-01-01(2.4.3) FIX: Android JNI import.
+- 2019-01-04(2.4.4) SETENV to set NSAllowsArbitraryLoads in iOS template in byRobinextensionmanager 0.2.0>
 
 ## Submitting a Pull Request
 

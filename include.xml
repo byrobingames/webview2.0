@@ -7,6 +7,7 @@
 	</section>
 
 	<section if="ios">
+        <setenv name="WEBVIEW_ENABLED" value="true"/>
         
         <echo value='|----------------------------------------------------------------------------|' />
         <echo value='| Webview2.0: Enable byRobin Extension manager in "Setting->Extension"       |' />
